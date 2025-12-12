@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brighters AI - Climate Chatbot</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <img src="ai logo.png.png" alt="Brighters AI Logo" style="height: 60px; width: auto;">
+            </div>
+            
+
+            
+            <div class="nav-controls">
+                <button class="lang-toggle" onclick="toggleLanguage()">
+                    <span id="lang-text">বাংলা</span>
+                </button>
+
+            </div>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <div class="chat-container">
+            <div class="chat-header">
+                <div class="bot-info">
+                    <div class="bot-avatar">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <div class="bot-details">
+                        <h3>Brighters AI</h3>
+                        <span class="status" id="bot-status" data-en="Brighters AI Assistant Online" data-bn="ব্রাইটার্স সহায়ক অনলাইন">Brighters AI Assistant Online</span>
+                        <div class="typing-indicator" id="typing-indicator" style="display: none;">
+                            <span></span><span></span><span></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="chat-messages" id="chat-messages">
+                <div class="message bot-message">
+                    <div class="message-content">
+                        <span data-en="Hello! I'm Brighters AI, your climate assistant. How can I help you today?" 
+                              data-bn="হ্যালো! আমি ব্রাইটার্স এআই, আপনার জলবায়ু সহায়ক। আজ আমি আপনাকে কীভাবে সাহায্য করতে পারি?">
+                            Hello! I'm Brighters AI, your climate assistant. How can I help you today?
+                        </span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="chat-input-container">
+                <div class="quick-actions">
+                    <button class="quick-btn" onclick="sendQuickMessage('How can I become a member of Brighters?')" 
+                            data-en="How can I become a member of Brighters?" data-bn="আমি কীভাবে ব্রাইটার্সের সদস্য হতে পারি?">How can I become a member of Brighters?</button>
+                    <button class="quick-btn" onclick="sendQuickMessage('What will it take to work in the Brighters office?')" 
+                            data-en="What will it take to work in the Brighters office?" data-bn="ব্রাইটার্স অফিসে কাজ করতে কী লাগবে?">What will it take to work in the Brighters office?</button>
+                    <button class="quick-btn" onclick="sendQuickMessage('Tell me about Brighters')" 
+                            data-en="Tell me about Brighters" data-bn="ব্রাইটার্স সম্পর্কে বলুন">Tell me about Brighters</button>
+                </div>
+                
+                <div class="input-wrapper">
+                    <input type="text" id="message-input" 
+                           data-en-placeholder="Type your climate question..." 
+                           data-bn-placeholder="আপনার জলবায়ু প্রশ্ন টাইপ করুন..."
+                           placeholder="Type your climate question...">
+                    <button onclick="sendMessage()" class="send-btn">
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
